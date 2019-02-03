@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "yarn-issues",
+  "scripts": {
+    "list-node-modules": "ls node_modules/ > node_modules.txt & ls app/node_modules/ > app/node_modules.txt & ls website/node_modules/ > website/node_modules.txt & ls component-lib/node_modules/ > component-lib/node_modules.txt"
+  },
+  "workspaces": {
+    "packages": [
+      "app",
+      "website",
+      "component-lib"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-*",
+      "**/react-native-*/**"
+    ]
+  },
+  "devDependencies": {
+    "prettier": "^1.16.3"
+  }
+}
